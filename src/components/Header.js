@@ -9,7 +9,6 @@ const Header = () => (
                     <Text color='#fff' fontSize={20} fontWeight={600}>Movies App</Text>
                 </HStack>
             </Box>    
-        <Text>Header</Text>
     </>
 )
 
