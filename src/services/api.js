@@ -6,11 +6,11 @@ import { API_KEY } from "./api_config";
 export const GET = async (params) => {
     const API_URL = `${BASE_URL}${params}?api_key=${API_KEY}`;
 
-    let response = await fetch(API_URL, {
+    const response = await fetch(API_URL, {
         method: 'GET',
     });
 
-    response = response.json();
+    const data = await response.json();
 
-    return response;
+    return data;
 }

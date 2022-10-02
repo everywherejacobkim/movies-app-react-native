@@ -1,24 +1,28 @@
-import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { Box, Text, ScrollView } from 'native-base'
+import MovieList from '../components/MovieList';
 import { GET } from '../services/api';
+
 
 
 const Movies = () => {
 
+    const [movies, setMovies] = useState([]);
+
     useEffect(() => {
         const getNowPlayingMovies = async () => {
             const response = await GET('/movie/now_playing');
-            console.log(response);
+            setMovies(response.results);
         };
         getNowPlayingMovies();
     }, []);
 
     return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <Text>
-            Movie
-        </Text>
-    </View>
+    <ScrollView>
+            {movies.map((movie) => {
+                return <MovieList key={movie.id} movie={movie} />
+            })}
+    </ScrollView>
 )};
 
 export default Movies;
