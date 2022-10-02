@@ -22,6 +22,7 @@ const Movies = () => {
             {movies.map((movie) => {
                 return <MovieList key={movie.id} movie={movie} />
             })}
+            <Box my={10}/>
     </ScrollView>
 )};
 
