@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { Box, Heading, ScrollView, HStack, Spinner } from 'native-base';
 import MovieList from '../components/MovieList';
 import { GET } from '../services/api';
-import MovieCategory from '../components/MovieCategory';
+import Category from '../components/Category';
 
 const Movies = () => {
 
     const [movies, setMovies] = useState([]);
     const [category, setCategory] = useState('now_playing');
     const [isLoading, setLoading] = useState(true);
+
+    const categoryOptions = ["now_playing", "popular", "top_rated", "upcoming"]
 
     useEffect(() => {
         if (movies) {
@@ -31,7 +33,7 @@ const Movies = () => {
         </HStack>
         ) : (
         <ScrollView>
-            <MovieCategory category={category} setCategory={setCategory}/>
+            <Category category={category} setCategory={setCategory} categoryOptions={categoryOptions}/>
             {movies?.map((movie) => {
                 return <MovieList key={movie.id} movie={movie} />
             })}
