@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { Box, Image, Text, ScrollView } from 'native-base';
 import { IMG_URL } from '../services/api_config';

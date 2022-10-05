@@ -12,15 +12,3 @@ export const GET = async (params) => {
 
     return data;
 }
-
-export const GET_SEARCH = async (params) => {
-    const API_URL = `${BASE_URL}${params}`;
-
-    const response = await fetch(API_URL, {
-        method: 'GET',
-    });
-
-    const data = await response.json();
-
-    return data;
-}
