@@ -14,11 +14,11 @@ const Movies = () => {
 
     useEffect(() => {
         if (movies) {
-            const getNowPlayingMovies = async () => {
+            const getMovies = async () => {
                 const response = await GET(`/movie/${category}`);
                 setMovies(response.results);
             };
-            getNowPlayingMovies();
+            getMovies();
         }
         setLoading(false)
     }, [category]);
