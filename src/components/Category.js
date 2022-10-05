@@ -10,8 +10,8 @@ const Category = ({category, setCategory, categoryOptions}) => {
                     bg: "teal.600",
                     endIcon: <Ionicons name="checkmark" size={24} color="white" />
                 }} mt={1} onValueChange={itemValue => setCategory(itemValue)}>
-                    {categoryOptions.map((option, i) => (
-                        <Select.Item key={i} label={option} value={option} />
+                    {categoryOptions.map((option) => (
+                        <Select.Item key={option} label={option} value={option} />
                     ))}
         </Select>
             </Box>

@@ -3,7 +3,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import Movies from '../screens/Movies';
 import Search from '../screens/Search';
 import TvShows from '../screens/TvShows';
-import Stack from './Stack';
+import MovieStack from './MovieStack';
+import TvStack from './TvStack';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -14,9 +15,9 @@ const Tabs = () => (
             fontSize: 14,
         },
         }}>
-            <Tab.Screen name="Movies" component={Stack} />
+            <Tab.Screen name="Movies" component={MovieStack} />
             <Tab.Screen name="Search Results" component={Search} />
-            <Tab.Screen name="TV Shows" component={TvShows} />
+            <Tab.Screen name="TV Shows" component={TvStack} />
         </Tab.Navigator>
 );
 
